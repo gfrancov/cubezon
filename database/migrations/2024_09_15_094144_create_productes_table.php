@@ -16,16 +16,14 @@ return new class extends Migration
             $table->string('NomProducte');
             $table->text('Descripcio')->nullable();
             $table->string('Icona')->nullable();
-            $table->unsignedBigInteger('CategoriaID');
+            $table->unsignedBigInteger('CategoriaID')->default(1);
             $table->unsignedBigInteger('BotigaID');
-            $table->unsignedBigInteger('ItemID');
             $table->decimal('Preu', 8, 2);
             $table->dateTime('DataCreacio');
             $table->integer('Estoc');
             $table->enum('Estat', ['Disponible', 'No Disponible'])->default('Disponible');
             $table->foreign('CategoriaID')->references('id')->on('categorias')->onDelete('cascade');
             $table->foreign('BotigaID')->references('id')->on('botigas')->onDelete('cascade');
-            $table->foreign('ItemID')->references('id')->on('items')->onDelete('cascade');
             $table->timestamps();
         });
     }

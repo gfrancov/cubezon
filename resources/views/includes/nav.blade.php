@@ -24,7 +24,7 @@
 
           </li>
           <li class="lg:w-[20vw] flex items-center justify-end">
-            <a href="#" class="flex items-center justify-center">
+            <a href="/gestio" class="flex items-center justify-center">
                 <p class="font-MinecraftRegular text-xs text-gray-400 leading-[0.1em] mt-2">Gestionar<br/> <span class="text-white text-base leading-1">la meva botiga</span></p>
             </a>
           </li>

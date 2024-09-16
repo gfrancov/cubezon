@@ -10,7 +10,7 @@ class BotigaController extends Controller
 {
     // Mostrar una botiga
     public function show($nomBotiga) {
-        $botiga = Botiga::with(['propietari', 'productes.item'])
+        $botiga = Botiga::with(['propietari'])
                         ->where('NomBotiga', $nomBotiga)
                         ->firstOrFail();
         

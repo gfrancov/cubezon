@@ -14,7 +14,7 @@ class LandingController extends Controller
 
             $cerca = $peticio->cerca;
 
-            $productes = Producte::with(['item', 'botiga'])
+            $productes = Producte::with(['botiga'])
                 ->selectRaw("
                     productes.*, 
                     (CASE 
@@ -24,9 +24,6 @@ class LandingController extends Controller
                     END) as relevance", ["%{$cerca}%", "%{$cerca}%"])
                 ->where('NomProducte', 'like', "%{$cerca}%")
                 ->orWhere('Descripcio', 'like', "%{$cerca}%")
-                ->orWhereHas('item', function ($query) use ($cerca) {
-                    $query->where('NomItem', 'like', "%{$cerca}%");
-                })
                 ->orWhereHas('botiga', function ($query) use ($cerca) {
                     $query->where('NomBotiga', 'like', "%{$cerca}%");
                 })
@@ -39,7 +36,7 @@ class LandingController extends Controller
         } else {
 
             // Obtener los productos más recientes para mostrar en la landing
-            $productes = Producte::with(['item', 'botiga.propietari'])->orderBy('created_at', 'desc')->take(10)->get();
+            $productes = Producte::with(['botiga.propietari'])->orderBy('created_at', 'desc')->take(10)->get();
 
             // Retornar la vista con los productos
             return view('landing', compact('productes'));

@@ -1,28 +1,28 @@
 <x-action-section>
     <x-slot name="title">
-        {{ __('Two Factor Authentication') }}
+        {{ __('Autenticació de dos factors') }}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Add additional security to your account using two factor authentication.') }}
+        {{ __('Afegeix una securització addicional al teu compte amb l\'autenticació de dos factors.') }}
     </x-slot>
 
     <x-slot name="content">
         <h3 class="text-lg font-medium text-gray-900">
             @if ($this->enabled)
                 @if ($showingConfirmation)
-                    {{ __('Finish enabling two factor authentication.') }}
+                    {{ __('Finalitzar l\'activació de l\'autenticació de dos factors.') }}
                 @else
-                    {{ __('You have enabled two factor authentication.') }}
+                    {{ __('Has activat l\'autenticació de dos factors.') }}
                 @endif
             @else
-                {{ __('You have not enabled two factor authentication.') }}
+                {{ __('No tens activada l\'autentiació de dos factors.') }}
             @endif
         </h3>
 
         <div class="mt-3 max-w-xl text-sm text-gray-600">
             <p>
-                {{ __('When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone\'s Google Authenticator application.') }}
+                {{ __('Quan l\'autenticació de dos factors està activada, se us demanarà un testimoni segur i aleatori durant l\'autenticació. Podeu recuperar aquest testimoni de l\'aplicació Google Authenticator del telèfon.') }}
             </p>
         </div>
 
@@ -31,9 +31,9 @@
                 <div class="mt-4 max-w-xl text-sm text-gray-600">
                     <p class="font-semibold">
                         @if ($showingConfirmation)
-                            {{ __('To finish enabling two factor authentication, scan the following QR code using your phone\'s authenticator application or enter the setup key and provide the generated OTP code.') }}
+                            {{ __('Per acabar d\'activar l\'autenticació de dos factors, escanegeu el següent codi QR utilitzant l\'aplicació d\'autenticació del telèfon\ o introduïu la clau de configuració i proporcioneu el codi OTP generat.') }}
                         @else
-                            {{ __('Two factor authentication is now enabled. Scan the following QR code using your phone\'s authenticator application or enter the setup key.') }}
+                            {{ __('L\'autenticació de dos factors està habilitada. Escanegeu el següent codi QR utilitzant l\'aplicació d\'autenticació del telèfon o introduïu la clau de configuració.') }}
                         @endif
                     </p>
                 </div>
@@ -44,7 +44,7 @@
 
                 <div class="mt-4 max-w-xl text-sm text-gray-600">
                     <p class="font-semibold">
-                        {{ __('Setup Key') }}: {{ decrypt($this->user->two_factor_secret) }}
+                        {{ __('Configurar clau') }}: {{ decrypt($this->user->two_factor_secret) }}
                     </p>
                 </div>
 
@@ -64,7 +64,7 @@
             @if ($showingRecoveryCodes)
                 <div class="mt-4 max-w-xl text-sm text-gray-600">
                     <p class="font-semibold">
-                        {{ __('Store these recovery codes in a secure password manager. They can be used to recover access to your account if your two factor authentication device is lost.') }}
+                        {{ __('Emmagatzema aquests codis de recuperació en un gestor de contrasenyes segur. Es poden utilitzar per recuperar l\'accés al vostre compte si es perd el dispositiu d\'autenticació de dos factors.') }}
                     </p>
                 </div>
 
@@ -80,26 +80,26 @@
             @if (! $this->enabled)
                 <x-confirms-password wire:then="enableTwoFactorAuthentication">
                     <x-button type="button" wire:loading.attr="disabled">
-                        {{ __('Enable') }}
+                        {{ __('Activar') }}
                     </x-button>
                 </x-confirms-password>
             @else
                 @if ($showingRecoveryCodes)
                     <x-confirms-password wire:then="regenerateRecoveryCodes">
                         <x-secondary-button class="me-3">
-                            {{ __('Regenerate Recovery Codes') }}
+                            {{ __('Regenera els codis de recuperació') }}
                         </x-secondary-button>
                     </x-confirms-password>
                 @elseif ($showingConfirmation)
                     <x-confirms-password wire:then="confirmTwoFactorAuthentication">
                         <x-button type="button" class="me-3" wire:loading.attr="disabled">
-                            {{ __('Confirm') }}
+                            {{ __('Confirmar') }}
                         </x-button>
                     </x-confirms-password>
                 @else
                     <x-confirms-password wire:then="showRecoveryCodes">
                         <x-secondary-button class="me-3">
-                            {{ __('Show Recovery Codes') }}
+                            {{ __('Mostra els codis de recuperació') }}
                         </x-secondary-button>
                     </x-confirms-password>
                 @endif
@@ -107,13 +107,13 @@
                 @if ($showingConfirmation)
                     <x-confirms-password wire:then="disableTwoFactorAuthentication">
                         <x-secondary-button wire:loading.attr="disabled">
-                            {{ __('Cancel') }}
+                            {{ __('Cancelar') }}
                         </x-secondary-button>
                     </x-confirms-password>
                 @else
                     <x-confirms-password wire:then="disableTwoFactorAuthentication">
                         <x-danger-button wire:loading.attr="disabled">
-                            {{ __('Disable') }}
+                            {{ __('Desactivar') }}
                         </x-danger-button>
                     </x-confirms-password>
                 @endif

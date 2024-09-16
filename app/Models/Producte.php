@@ -16,7 +16,6 @@ class Producte extends Model
         'Icona',
         'CategoriaID',
         'BotigaID',
-        'ItemID',
         'DataCreacio',
         'Estoc',
         'Estat',
@@ -30,11 +29,6 @@ class Producte extends Model
     public function categoria()
     {
         return $this->belongsTo(Categoria::class, 'CategoriaID');
-    }
-
-    public function item()
-    {
-        return $this->belongsTo(Item::class, 'ItemID');
     }
 
     public function ressenyes()

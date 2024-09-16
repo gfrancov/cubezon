@@ -33,34 +33,14 @@ class BloguerSeeder extends Seeder
             'Estat' => 'Actiu',
         ]);
 
-        // Crear categorías e ítems si no existen
-        $categoria = Categoria::firstOrCreate([
-            'NomCategoria' => 'Armament',
-        ], [
-            'Descripcio' => 'Armes i proteccio de tota mena',
-        ]);
-
-        $item1 = Item::firstOrCreate([
-            'NomItem' => 'diamond_sword',
-        ], [
-            'Descripcio' => 'Espasa de Diamant',
-        ]);
-
-        $item2 = Item::firstOrCreate([
-            'NomItem' => 'elytra',
-        ], [
-            'Descripcio' => 'Ales elytra.',
-        ]);
-
         // Crear un parell de productes
         Producte::create([
             'NomProducte' => 'Espasa de Diamant',
             'Descripcio' => 'Encantada amb Retroces II',
             'Preu' => 190.00,
             'Icona' => '/item/diamond_sword_enchanted.webp',
-            'CategoriaID' => $categoria->id,
+            'CategoriaID' => 1,
             'BotigaID' => $botiga->id,
-            'ItemID' => $item1->id,
             'DataCreacio' => now(),
             'Estoc' => 2,
             'Estat' => 'Disponible',
@@ -71,9 +51,8 @@ class BloguerSeeder extends Seeder
             'Descripcio' => 'Ales elytra per sobrevolar Cubecat',
             'Preu' => 2200.00,
             'Icona' => '/item/elytra.webp',
-            'CategoriaID' => $categoria->id,
+            'CategoriaID' => 1,
             'BotigaID' => $botiga->id,
-            'ItemID' => $item2->id,
             'DataCreacio' => now(),
             'Estoc' => 1,
             'Estat' => 'Disponible',
