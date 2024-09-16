@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "MinecraftRegular";
+    src: url('../../public/assets/font/MinecraftRegular-Bmg3.otf');
+}
+
+@font-face {
+    font-family: "MinecraftBold";
+    src: url('../../public/assets/font/MinecraftBold-nMK1.otf');
+}
