@@ -11,3 +11,13 @@ Route::get('/producte/{id}', [ProducteController::class, 'show'])->name('botiga.
 Route::get('/llistat', [BotigaController::class, 'list'])->name('botiga.list');
 Route::view('/badalona', 'badalona');
 Route::view('/faq', 'faq');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/gestio', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

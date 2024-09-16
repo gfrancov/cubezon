@@ -42,7 +42,7 @@ class LandingController extends Controller
             $productes = Producte::with(['item', 'botiga.propietari'])->orderBy('created_at', 'desc')->take(10)->get();
 
             // Retornar la vista con los productos
-            return view('welcome', compact('productes'));
+            return view('landing', compact('productes'));
 
         }
     }
