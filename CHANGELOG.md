@@ -1,6 +1,14 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/laravel/compare/v11.1.5...11.x)
+## [Unreleased](https://github.com/laravel/laravel/compare/Cubezon...main)
+
+## [Cubezon](https://github.com/laravel/laravel/compare/v11.1.5...Cubezon) - 2024-09-17
+
+Primera versió de Cubezon en funcionament:
+
+* Productes visibles
+* Botigues visibles
+* Login i registre de botiguers, amb gestió dels productes de les seves botigues
 
 ## [v11.1.5](https://github.com/laravel/laravel/compare/v11.1.4...v11.1.5) - 2024-08-14
 
