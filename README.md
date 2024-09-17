@@ -2,6 +2,9 @@
 
 **Cubezon** és un marketplace en Minecraft inspirat en Amazon pel servidor de Minecraft [Cubecat](https://x.com/CubecatOficial), creat per facilitar la compra i venda de productes dins del joc. Aquest projecte està desenvolupat amb Laravel i està pensat per oferir una experiència intuïtiva i personalitzada als usuaris.
 
+<img src="/public/assets/img/cubezon-gran.png" width="300">
+
+
 ## Tecnologies emprades
 
 - **Laravel 11.9:** El projecte està construït amb Laravel, un framework de PHP potent i molt flexible que facilita el desenvolupament de projectes web.
