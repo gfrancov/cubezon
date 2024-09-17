@@ -19,7 +19,7 @@
 
         <div class="-mt-28 lg:w-[960px] px-5 lg:px-0 flex flex-col lg:flex-row items-center">
             
-            <img src="{{asset($botiga->Logo)}}" class="w-48 p-6 bg-white rounded-full lg:mr-10 border-8 border-zinc-200" alt="Logo Cal Bruixot">
+            <img src="{{asset($botiga->Logo)}}" class="w-48 bg-white rounded-full lg:mr-10 border-8 border-zinc-200" alt="Logo Cal Bruixot">
             <div class="mt-10 lg:mt-32">
                 <h1 class="font-MinecraftBold text-4xl lg:text-6xl">{{$botiga->NomBotiga}}</h1>
                 <p class="font-MinecraftRegular text-zinc-500 text-lg">{{$botiga->Descripcio}}</p>

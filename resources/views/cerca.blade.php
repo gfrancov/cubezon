@@ -12,7 +12,7 @@
   @include('includes.nav')
 
     <!-- Productes -->
-    <section class="flex justify-center items-center mt-24 mb-32 pb-12 min-h-[30vh]">
+    <section class="flex justify-center items-center mt-24 mb-32 pb-12 min-h-[30vh] mx-5 lg:mx-0">
 
         <div class="lg:w-[960px] grid grid-cols-1 lg:grid-cols-3 gap-6">
             

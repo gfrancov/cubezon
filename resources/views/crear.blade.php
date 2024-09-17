@@ -14,7 +14,7 @@
                 @csrf
                 <input type="hidden" name="BotigaID" value="{{ $botiga->id }}">
                 <div class="form-group flex flex-col mb-3">
-                    <label for="NomProducte">Nombre del Producto</label>
+                    <label for="NomProducte">Nom del Producte</label>
                     <input type="text" class="form-control" id="NomProducte" name="NomProducte" required>
                 </div>
                 <div class="form-group flex flex-col mb-3">
@@ -35,17 +35,16 @@
                 </div>
                 <div class="form-group flex flex-col mb-3">
                     <label for="Preu">Precio</label>
-                    <input type="number" class="form-control" id="Preu" name="Preu" required>
+                    <input type="number" step='0.01' class="form-control" id="Preu" name="Preu" required>
                 </div>
                 <div class="form-group flex flex-col mb-3">
                     <label for="Estoc">Estoc</label>
                     <input type="number" class="form-control" id="Estoc" name="Estoc" required>
                 </div>
-                <button type="submit" class="p-2 py-1 mt-2 bg-green-800 hover:bg-green-600 text-white rounded-sm btn btn-primary">Guardar Producto</button>
+                <button type="submit" class="p-2 py-1 mt-2 bg-green-800 hover:bg-green-600 text-white rounded-sm btn btn-primary">Guardar producte</button>
             </form>
         
 
         </div>
     </div>
 </x-app-layout>
-@dd($categories)

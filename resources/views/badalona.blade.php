@@ -12,7 +12,7 @@
   @include('includes.nav')
 
     
-    <section class="mt-[48px] flex flex-col justify-center items-center">
+    <section class="mt-[48px] flex flex-col justify-center items-center px-5 lg:px-0">
         <div class="lg:w-[960px] my-2">
             <p class="font-MinecraftRegular text-xs px-2 py-1 rounded-md text-zinc-600 opacity-50">PUBLICITAT: Això es un anunci publicitari dels nostres patrocinadors/col·laboradors. Si tambe vols anunciar-te contacta'ns.</p>
         </div>

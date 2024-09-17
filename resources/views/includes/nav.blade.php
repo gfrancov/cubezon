@@ -43,8 +43,20 @@
         <ul class="mx-5 py-4">
           <a class="" href="/"><li class="text-white font-MinecraftRegular px-4 py-2 text-lg">Inici</li></a>
           <!-- <a class="" target="_blank" href="https://plaza.cableando.net"><li class="text-black px-4 py-2 text-lg">Plaza</li></a> -->
-          <a class="" href="/cerca"><li class="text-white font-MinecraftRegular px-4 py-2 text-lg">Cerca</li></a>
-          <a class="" href="/gestio"><li class="text-white font-MinecraftRegular px-4 py-2 text-lg">Gestio de botigues</li></a>
+          <a class="" href="/llistat"><li class="text-white font-MinecraftRegular px-4 py-2 text-lg">Llistat de Botigues</li></a>
+          <a class="" href="/gestio"><li class="text-white font-MinecraftRegular px-4 py-2 text-lg">Gestionar la meva botiga</li></a>
+          <a class="" href="/faq"><li class="text-white font-MinecraftRegular px-4 py-2 text-lg">Preguntes freqüents (FAQ)</li></a>
+            <li class="text-white font-MinecraftRegular px-4 py-2 text-lg">
+              <form action="/" id="form-cerca-mobil">
+                
+                <div class="flex rounded-md">
+                    <input type="text" name="cerca" id="cerca" class="text-black font-MinecraftRegular px-2 py-1 rounded-l-sm" placeholder="Cerca a Cubezon">
+                    <button type="submit" form="form-cerca-mobil" value="Submit" class="px-2 py-1 bg-[#febd69] hover:bg-[#ff9900] rounded-r-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+                    </button>    
+                </div>
+            </form>
+            </li>
         </ul>
       </div>
     </div>

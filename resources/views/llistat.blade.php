@@ -11,7 +11,7 @@
 <body class="bg-zinc-200">
 @include('includes.nav')
     
-    <section class="mt-[48px] flex justify-center items-center">
+    <section class="mt-[48px] flex justify-center items-center px-5 lg:px-0">
 
         <div class="lg:w-[960px] py-12 flex flex-col justify-center items-start">
 
@@ -19,7 +19,7 @@
 
             @foreach ($botigues as $botiga)
 
-                <a href="/botiga/{{$botiga->NomBotiga}}" class="flex items-center p-5 bg-white lg:rounded-md lg:shadow-lg mb-5 w-full">
+                <a href="/botiga/{{$botiga->NomBotiga}}" class="flex flex-col lg:flex-row items-center p-5 py-8 lg:py-5 bg-white lg:rounded-md lg:shadow-lg mb-5 w-full">
                     <img class="h-24 mr-3" src="{{$botiga->Logo}}" alt="{{$botiga->NomBotiga}}">
                     <div class="flex flex-col items-start lg:mr-12">
                         <h2 class="font-MinecraftBold text-2xl text-black">{{$botiga->NomBotiga}} </h2>
@@ -28,7 +28,7 @@
                     <?php
                         $coordenades = explode("&",((explode("?",$botiga->Mapa))[1]));
                     ?>
-                    <div>
+                    <div class="text-center lg:text-left mt-8 lg:mt-0">
                         <p class="text-base font-MinecraftRegular text-zinc-700">Ubicada a {{$botiga->Municipi}}</p>
                         <p class="text-base font-MinecraftRegular text-zinc-700">Coordenades {{$coordenades[3]}} {{$coordenades[5]}}</p>
                     </div>

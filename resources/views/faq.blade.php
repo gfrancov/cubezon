@@ -11,7 +11,7 @@
 <body class="bg-zinc-200">
 @include('includes.nav')
     
-    <section class="my-24 flex justify-center items-center">
+    <section class="my-24 flex justify-center items-center mx-5 lg:mx-0">
 
         <div class="lg:w-[960px]">
             <h1 class="text-4xl font-MinecraftBold text-black mb-12">Preguntes freqüents</h1>
@@ -21,12 +21,12 @@
             </div>
             <div class="my-8" id="com-es-compra">
                 <p class="font-MinecraftBold text-xl">2. Com es compra?</p>
-                <p class="font-MinecraftRegular text-lg text-zinc-700">Per ara no es pot comprar online, tot i que estem treballant per fer-ho. Nomes es podran comprar online els productes amb l'etiqueta prime (<span class="text font-MinecraftBold text-sm text-amber-700">✔<span class="text-xs text-sky-600">prime</span></span>), que son les adminshops i les botigues habilitades per Cubezon.</p>
+                <p class="font-MinecraftRegular text-lg text-zinc-700">Per ara no es pot comprar online, tot i que estem treballant per fer-ho. Nomes es podran comprar online els productes amb l'etiqueta prime (<span class="text font-MinecraftBold text-sm text-amber-700">✔<span class="text-xs text-sky-600">prime</span></span>), que son de les botigues habilitades per Cubezon.</p>
                 <p class="font-MinecraftRegular text-lg text-zinc-700">Tot i així us facilitem totes les dades necessàries de la botiga per trobar-la, o contactar amb el seu propietari per poder comprar el producte.</p>
             </div>
             <div class="my-8" id="cercador">
                 <p class="font-MinecraftBold text-xl">3. Com funciona el cercador?</p>
-                <p class="font-MinecraftRegular text-lg text-zinc-700">Pots cercar amb el cercador de Cubezon pel nom del producte, Descripcio, nom de la botiga, o identificar de l'item de minecraft (per exemple diamond_sword per espases de diamant).</p>
+                <p class="font-MinecraftRegular text-lg text-zinc-700">Pots cercar amb el cercador de Cubezon pel nom del producte, Descripcio, nom de la botiga.</p>
             </div>
             <div class="my-8" id="afegir-botiga">
                 <p class="font-MinecraftBold text-xl">4. Com puc afegir la meva botiga?</p>

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->decimal('Preu', 8, 2);
             $table->dateTime('DataCreacio');
             $table->integer('Estoc');
+            $table->integer('Prime')->default(0);
             $table->enum('Estat', ['Disponible', 'No Disponible'])->default('Disponible');
             $table->foreign('CategoriaID')->references('id')->on('categorias')->onDelete('cascade');
             $table->foreign('BotigaID')->references('id')->on('botigas')->onDelete('cascade');

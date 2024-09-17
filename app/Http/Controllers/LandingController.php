@@ -36,7 +36,7 @@ class LandingController extends Controller
         } else {
 
             // Obtener los productos más recientes para mostrar en la landing
-            $productes = Producte::with(['botiga.propietari'])->orderBy('created_at', 'desc')->take(10)->get();
+            $productes = Producte::with(['botiga.propietari'])->orderBy('created_at', 'desc')->take(12)->get();
 
             // Retornar la vista con los productos
             return view('landing', compact('productes'));

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Producte;
 use App\Models\Botiga;
 use App\Models\Categoria;
+use Illuminate\Support\Facades\Auth;
 
 class ProducteController extends Controller
 {
@@ -33,11 +34,16 @@ class ProducteController extends Controller
             'NomProducte' => 'required|string|max:100',
             'Descripcio' => 'nullable|string',
             'Preu' => 'required|numeric',
-            'Icona' => 'required|url',
+            'Icona' => 'required',
             'CategoriaID' => 'required',
             'Estoc' => 'required|integer',
             'BotigaID' => 'required|exists:botigas,id',
         ]);
+
+        // Verificar que la tienda pertenece al usuario autenticado
+        $botiga = Botiga::where('id', $request->BotigaID)
+        ->where('PropietariID', Auth::id())
+        ->firstOrFail();
 
         Producte::create([
             'NomProducte' => $request->NomProducte,
@@ -51,7 +57,7 @@ class ProducteController extends Controller
             'Estat' => 'Disponible',
         ]);
 
-        return redirect()->route('gestio.mevesBotigues')->with('success', 'Producto añadido exitosamente.');
+        return redirect()->route('gestio.mevesBotigues')->with('success', 'Producte afegit exitosament.');
     }
 
     public function edit($id)
@@ -71,10 +77,16 @@ class ProducteController extends Controller
             'Estoc' => 'required|integer',
         ]);
 
-        $producte = Producte::findOrFail($id);
+        // Buscar el producto y asegurar que pertenece a una tienda del usuario autenticado
+        $producte = Producte::where('id', $id)
+            ->whereHas('botiga', function($query) {
+                $query->where('PropietariID', Auth::id());
+            })
+            ->firstOrFail();
+
         $producte->update($request->all());
 
-        return redirect()->route('gestio.mevesBotigues')->with('success', 'Producto actualizado exitosamente.');
+        return redirect()->route('gestio.mevesBotigues')->with('success', 'Producte actualitzat exitosament.');
     }
 
     public function destroy($id)
@@ -82,7 +94,7 @@ class ProducteController extends Controller
         $producte = Producte::findOrFail($id);
         $producte->delete();
 
-        return redirect()->route('gestio.mevesBotigues')->with('success', 'Producto eliminado exitosamente.');
+        return redirect()->route('gestio.mevesBotigues')->with('success', 'Producte eliminat exitosament.');
     }
 
 }
