@@ -3,7 +3,7 @@
             <img src="{{asset('/assets/img/cubezon-gran.png')}}" class="w-64" alt="">
             <div>
                 <div class="mb-5">
-                    <p>Cubezon &copy; 2024<br/>Una empresa fictícia a <a class="hover:underline" target="_blank" href="https://x.com/CubecatOficial">Cubecat</a>, Catalunya a Minecraft.<br/><a class="hover:underline" href="/faq">> Preguntes freqüents</a></p>
+                    <p>Cubezon &copy; 2024<br/>Una empresa fictícia a <a class="hover:underline" target="_blank" href="https://x.com/CubecatOficial">Cubecat</a>, Catalunya a Minecraft.<br/>Estem a Plaça de la Vila 2, Badalona.<br/><a class="hover:underline" href="/faq">> Preguntes freqüents</a></p>
                 </div>
                 <div class="text-zinc-500">
                     <p class="font-MinecraftBold">Col·laboren:</p>

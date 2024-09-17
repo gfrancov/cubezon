@@ -32,7 +32,15 @@
                         <img class="h-32" src="{{$producte->Icona}}" alt="">
                     </a>
                     <div class="w-full">
-                        <h2 class="font-MinecraftBold text-black text-xl group-hover:underline"><a href="/producte/{{$producte->id}}" >{{$producte->NomProducte}}</a></h2>
+                        <div class="flex">
+                            <h2 class="font-MinecraftBold text-black text-xl mr-3 group-hover:underline"><a href="/producte/{{$producte->id}}" >{{$producte->NomProducte}}</a></h2>
+                            @if(substr($producte->Descripcio, -6) == 'Oferta')
+                            <span class="text-sm text-white px-2 py-1 bg-red-600 rounded-sm font-MinecraftBold">OFERTA</span>
+                            @endif
+                        </div>
+                        @if($producte->Prime == 1)
+                            <p class="text font-MinecraftBold text-sm text-amber-700">✔<span class="text-xs text-sky-600">prime</span></p>
+                        @endif
                         <p class="font-MinecraftRegular">{{$producte->Descripcio}}</p>
                     </div>
                     <div class="font-MinecraftRegular w-full flex justify-between items-center mt-10">
