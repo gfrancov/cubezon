@@ -27,12 +27,18 @@
                         <img class="h-32" src="{{$producte->Icona}}" alt="">
                     </a>
                     <div class="w-full">
-                        <h2 class="font-MinecraftBold text-black text-xl group-hover:underline"><a href="/producte/{{$producte->id}}" >{{$producte->NomProducte}}</a></h2>
+                        <h2 class="font-MinecraftBold text-black text-xl group-hover:underline"><a href="/producte/{{$producte->id}}" >{{$producte->NomProducte}} @if(substr($producte->Descripcio, -6) == 'Oferta')
+                            <span class="text-sm text-white px-2 py-1 bg-red-700 rounded-sm font-MinecraftBold">OFERTA</span>
+                            @endif</a></h2>
+                        @if($producte->Prime == 1)
+                            <p class="text font-MinecraftBold text-sm text-amber-700">✔<span class="text-xs text-sky-600">prime</span></p>
+                        @endif
                         <p class="font-MinecraftRegular">{{$producte->Descripcio}}</p>
                     </div>
+
                     <div class="font-MinecraftRegular w-full flex justify-between items-center mt-10">
                         <p class="font-MinecraftBold text-green-800 text-xl leading-1">{{$producte->Preu}}$</p>
-                        <p class="text-zinc-500 text-xs"><a class="hover:underline" href="/botiga/{{$producte->botiga->NomBotiga}}">{{$producte->botiga->NomBotiga}}</a>, {{$producte->botiga->Municipi}}</p>
+                        <p class="text-zinc-500 text-xs text-right"><a class="hover:underline" href="/botiga/{{$producte->botiga->NomBotiga}}">{{$producte->botiga->NomBotiga}}</a>, {{$producte->botiga->Municipi}}</p>
                     </div>
                 </div>
                 

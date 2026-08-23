@@ -14,6 +14,9 @@ class Comanda extends Model
         'DataComanda',
         'EstatComanda',
         'Total',
+        'Ubicacio',
+        'Empresa',
+        'Pagat'
     ];
 
     public function detalls()

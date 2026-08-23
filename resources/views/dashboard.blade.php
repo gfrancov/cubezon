@@ -7,6 +7,9 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="mb-6">
+                <a href="{{ route('botigues.create') }}" class="p-2 py-1 bg-green-800 hover:bg-green-600 text-white rounded-sm btn btn-primary">Crear nova botiga</a>
+            </div>
             <div class="">
                     @forelse ($botigues as $botiga)
                         <div class="mb-6 bg-white overflow-hidden shadow-xl sm:rounded-lg p-5">
@@ -17,7 +20,15 @@
                                         <h3 class="font-MinecraftBold text-xl">{{$botiga->NomBotiga}}</h3>
                                         <p class="text-zinc-600">{{$botiga->Municipi}}</p>
                                     </div>
-                                </div>    
+                                </div>
+                                <div class="flex items-center">
+                                    <a href="{{ route('botigues.edit', $botiga->id) }}" class="hover:bg-amber-600 p-2 py-1 bg-amber-800 text-white rounded-sm btn btn-warning btn-sm mr-2">Modificar botiga</a>
+                                    <form action="{{ route('botigues.destroy', $botiga->id) }}" method="POST" style="display:inline-block;" onsubmit="return confirm('Segur que vols eliminar la botiga «{{ $botiga->NomBotiga }}»? Aquesta acció també eliminarà tots els seus productes i no es pot desfer.');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="p-2 py-1 bg-red-800 hover:bg-red-600 text-white rounded-sm btn btn-danger btn-sm">Eliminar botiga</button>
+                                    </form>
+                                </div>
                             </div>
                             
                             <div>
@@ -69,7 +80,7 @@
                     
                     @empty
 
-                    <p>No tens cap botiga registrada a Cubezon.<br/>Contacta per discord amb en rojoCaotico.</p>
+                    <p>No tens cap botiga registrada a Cubezon.<br/>Fes clic a "Crear nova botiga" per donar-ne d'alta una.</p>
                     
                     @endforelse
             </div>

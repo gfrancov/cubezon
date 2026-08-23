@@ -1,15 +1,17 @@
+@import 'swiper/css/bundle';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
     font-family: "MinecraftRegular";
-    src: url('../../public/assets/font/MinecraftRegular-Bmg3.otf');
+    src: url('../../public/assets/font/Minecraft-reloaded.otf');
 }
 
 @font-face {
     font-family: "MinecraftBold";
-    src: url('../../public/assets/font/MinecraftBold-nMK1.otf');
+    src: url('../../public/assets/font/Minecraft-Bold-reloaded.otf');
 }
 
 [x-cloak] {

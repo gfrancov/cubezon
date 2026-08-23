@@ -18,7 +18,8 @@ class UserController extends Controller
         $botigues = Botiga::where('PropietariID', $userId)->with('productes')->get();
 
         // Retornar una vista con las tiendas del usuario
-        return view('dashboard', compact('botigues'));        
+        return view('dashboard', compact('botigues'));
 
     }
+
 }

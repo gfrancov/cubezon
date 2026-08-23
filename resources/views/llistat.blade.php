@@ -29,14 +29,18 @@
                             @endif
                         </div>
         
-                        <p class="font-MinecraftRegular text-base text-zinc-600">@if($botiga->Prime != 0)<span class="text font-MinecraftBold text-sm text-amber-700">✔<span class="text-xs text-sky-600">prime</span></span><br/>@endif Botiga de {{$botiga->propietari->name}}</p>
+                        @if ($botiga->propietari->name == 'Yandrax')
+                            <p class="font-MinecraftRegular text-base text-zinc-600">Il·lustre Col·legi d'Advocacia de Cubecat</p>
+                        @else
+                            <p class="font-MinecraftRegular text-base text-zinc-600">Botiga de {{$botiga->propietari->name}}</p>
+                        @endif
                     </div>
                     <?php
-                        $coordenades = explode("&",((explode("?",$botiga->Mapa))[1]));
+                        $coordenades = explode(":",$botiga->Mapa);
                     ?>
                     <div class="text-center lg:text-left mt-8 lg:mt-0">
                         <p class="text-base font-MinecraftRegular text-zinc-700">Ubicada a {{$botiga->Municipi}}</p>
-                        <p class="text-base font-MinecraftRegular text-zinc-700">Coordenades {{$coordenades[3]}} {{$coordenades[5]}}</p>
+                        <p class="text-base font-MinecraftRegular text-zinc-700">Coordenades X: {{$coordenades[2]}}, Y: {{$coordenades[4]}}</p>
                     </div>
                 </a>
                 
